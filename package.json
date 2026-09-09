@@ -6,7 +6,7 @@
     "tode": "./dist/main.js"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json && npm run -s build:pages",
+    "build": "tsc -p tsconfig.json && node scripts/write-cjs-boundary.js && npm run -s build:pages",
     "build:pages": "TODE_PAGE=shortcuts vite build && TODE_PAGE=import vite build",
     "dist": "bash scripts/dist.sh",
     "typecheck": "tsc --noEmit && tsc --noEmit -p src/pages/tsconfig.json",
